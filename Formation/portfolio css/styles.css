@@ -1,0 +1,298 @@
+/* Resets default margins, padding, and sets box-sizing for consistent layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sets base styles for the body, including background and text color */
+body {
+  background-color: #f8fafc;
+  color: #1a202c;
+  line-height: 1.7;
+}
+
+/* Styles the header with a gradient background and centered content */
+header {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Adds a hover effect to lift the header slightly */
+header:hover {
+  transform: translateY(-5px);
+}
+
+/* Styles the main heading in the header */
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles paragraphs in the header for readability */
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 0.3rem;
+}
+
+/* Styles links in the header with a color transition on hover */
+header a {
+  color: #63b3ed;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s ease;
+}
+
+header a:hover {
+  color: #90cdf4;
+  transform: scale(1.05);
+}
+
+/* Styles the navigation bar with a sticky position and shadow */
+nav {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+/* Arranges navigation links in a centered flex layout */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Styles navigation links with a hover effect and underline animation */
+nav a {
+  color: #2d3748;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s, transform 0.3s ease;
+}
+
+/* Creates an animated underline effect for navigation links */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3182ce;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #3182ce;
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Centers and constrains the main content container */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* Styles sections with a card-like appearance and hover effect */
+section {
+  margin-bottom: 3rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles section headings with a colored border */
+section h2 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 1.2rem;
+  border-left: 4px solid #3182ce;
+  padding-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+section:hover h2 {
+  color: #3182ce;
+}
+
+/* Styles the profile section's paragraph */
+.profile p {
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+/* Styles items in education, experience, projects, and activities sections */
+.education .item,
+.experience .item,
+.projects .item,
+.activities .item {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.education .item:hover,
+.experience .item:hover,
+.projects .item:hover,
+.activities .item:hover {
+  background: #f7fafc;
+}
+
+/* Styles headings for items */
+.education .item h3,
+.experience .item h3,
+.projects .item h3,
+.activities .item h3 {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles paragraphs within items */
+.education .item p,
+.experience .item p,
+.projects .item p,
+.activities .item p {
+  font-size: 1rem;
+  color: #718096;
+}
+
+/* Arranges languages in a responsive grid layout */
+.languages ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+/* Styles language list items with a pill-like appearance */
+.languages ul li {
+  background: #edf2f7;
+  color: #2d3748;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.languages ul li:hover {
+  background: #bee3f8;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Centers content in language list items */
+.languages ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Styles flag images in the languages section */
+.languages ul li img {
+  width: 20px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.languages ul li:hover img {
+  transform: rotate(10deg);
+}
+
+/* Arranges skills in a flexible, wrapping layout */
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Styles skill list items with a colored background */
+.skills ul li {
+  background: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.skills ul li:hover {
+  background: #bee3f8;
+}
+
+/* Styles the footer with a dark background and centered text */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #2d3748;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+footer:hover {
+  background: #4a5568;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  /* Reduces header heading size */
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Adjusts header paragraph size */
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Stacks navigation links vertically */
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* Reduces section heading size */
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  /* Adjusts container padding */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Adjusts grid layout for skills and languages */
+  .skills ul,
+  .languages ul {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
